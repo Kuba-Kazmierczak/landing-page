@@ -1,35 +1,33 @@
-*,*::after, *::before {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: darkgray;
-}
-
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
     height: 8vh;
     background: rgb(1, 5, 26);
-}
-
-.nav-brand {
+    font-size: large;
+  }
+  
+  .nav-brand {
     text-transform: uppercase;
     font-weight: bold;
-}
+    margin-left: 20px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+  }
+  .navbar-link {
+    margin: 20px;
+  }
+  
+
 
