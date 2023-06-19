@@ -1,51 +1,80 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import { GiRocketThruster } from "react-icons/gi";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-    const [ isMenuOpen, setIsMenuOpen] = useState(false);
+function Navbar() {
+  const [click, setClick] = useState(false);
 
-    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-    };
-
-  const links = [
-    { label: 'Brand', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Skills', path: '/skills' },
-    { label: 'Portfolio', path: '/portfolio' },
-    { label: 'Contact', path: '/contact' }
-  ];
-
-
-
-  const renderedLinks = links.map((link) => {
-    return (
-      <Link key={link.label} to={link.path}>
-        <li
-          className={`navbar-link `}
-        >
-          {link.label}
-        </li>
-      </Link>
-    );
-  });
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
   return (
-    <div className={`navbar ${isMenuOpen ? 'open' : ''}`}>
-      <div className={`navbar-left ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/">
-          <span className="nav-brand">{links[0].label}</span>
-        </Link>
-      </div>
-      <button className={`toggle-button ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        Toggle
-      </button>
-      <div className={`navbar-right ${isMenuOpen ? 'open' : ''}`}>
-        {renderedLinks.slice(1)}
-      </div>
-    </div>
+    <>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <nav className="navbar">
+          <div className="navbar-container container">
+            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+              <GiRocketThruster className="navbar-icon" />
+              KubaK
+            </Link>
+            <div className="menu-icon" onClick={handleClick}>
+              {click ? <FaTimes /> : <FaBars />}
+            </div>
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Skills
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Projects
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </IconContext.Provider>
+    </>
   );
-};
+}
 
 export default Navbar;
