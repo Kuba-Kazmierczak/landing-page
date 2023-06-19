@@ -3,19 +3,28 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+    const [ isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+
   const links = [
-    { label: 'brand', path: '/' },
-    { label: 'about', path: '/about' },
-    { label: 'skills', path: '/skills' },
-    { label: 'portfolio', path: '/portfolio' },
-    { label: 'contact', path: '/contact' }
+    { label: 'Brand', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Contact', path: '/contact' }
   ];
+
 
 
   const renderedLinks = links.map((link) => {
     return (
       <Link key={link.label} to={link.path}>
-        <li className="navbar-link" >
+        <li
+          className={`navbar-link `}
+        >
           {link.label}
         </li>
       </Link>
@@ -23,14 +32,17 @@ const Navbar = () => {
   });
 
   return (
-    <div className="navbar">
-      <div className="navbar-left">
+    <div className={`navbar ${isMenuOpen ? 'open' : ''}`}>
+      <div className={`navbar-left ${isMenuOpen ? 'open' : ''}`}>
         <Link to="/">
           <span className="nav-brand">{links[0].label}</span>
         </Link>
       </div>
-      <div className="navbar-right">
-        {renderedLinks.slice(1)};
+      <button className={`toggle-button ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        Toggle
+      </button>
+      <div className={`navbar-right ${isMenuOpen ? 'open' : ''}`}>
+        {renderedLinks.slice(1)}
       </div>
     </div>
   );
