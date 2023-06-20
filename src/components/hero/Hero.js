@@ -7,9 +7,9 @@ const Hero = () => {
   
   return (
     <div className='hero'>
-     
+      Home
     </div>
   )
 }
 
-export default Hero
+export default Hero;

@@ -13,7 +13,7 @@ function App() {
 			<Routes>
 				<Route exact path='/' element={<Hero/>}></Route>
 				<Route path='/skills' element={<Skills />}></Route>
-				<Route path='/portfolio' element={<Portfolio />}></Route>
+				<Route path='/projects' element={<Portfolio />}></Route>
 				<Route path='/contact' element={<Contact />}></Route>
 			</Routes>
     </BrowserRouter>
