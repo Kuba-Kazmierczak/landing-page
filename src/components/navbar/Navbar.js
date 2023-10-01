@@ -33,7 +33,7 @@ function Navbar() {
                   }
                   onClick={closeMobileMenu}
                 >
-                  Home
+                  About
                 </NavLink>
               </li>
               <li className="nav-item">
