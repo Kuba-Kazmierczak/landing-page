@@ -3,12 +3,15 @@ import "./Contact.css";
 
 const Contact = () => {
   const inputStyle =
-    "bg-transparent border-slate-500 shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline";
+    "bg-transparent border-none shadow-2xl appearance-none border rounded w-3/4 py-2 px-3 text-gray-700 leading-tight focus:shadow-outline drop-shadow-2xl backdrop-invert-0 bg-white/20 focus:animate-pulse focus:bg-white/80 focus:outline-none focus:scale-125 ease-in duration-300";
   return (
-    <div class="contact text-center items-center justify-center flex">
-      <form class="xs:w-full md:w-1/2 lg:w-1/3 shadow-md rounded px-8 pt-6 pb-8 mb-4 xl:w-2/6 backdrop-blur-sm">
-        <div class="mb-4">
-          <label class="block text-gray-700 text-lg font-bold mb-2" for="Name">
+    <div className="contact text-center items-center justify-center flex">
+      <form className="xs:w-full md:w-1/2 lg:w-1/3 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 xl:w-2.5/6 backdrop-blur-sm">
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-lg font-bold mb-2"
+            for="Name"
+          >
             Name
           </label>
           <input
@@ -18,8 +21,11 @@ const Contact = () => {
             placeholder=""
           />
         </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 text-lg font-bold mb-2" for="Email">
+        <div className="mb-6">
+          <label
+            className="block text-gray-700 text-lg font-bold mb-2"
+            for="Email"
+          >
             Email
           </label>
           <input
@@ -29,14 +35,20 @@ const Contact = () => {
             placeholder=""
           />
         </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 text-lg font-bold mb-2" for="Email">
+        <div className="mb-6">
+          <label
+            className="block text-black text-lg font-bold mb-2"
+            for="Email"
+          >
             Phone
           </label>
           <input className={inputStyle} id="phone" type="text" placeholder="" />
         </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 text-lg font-bold mb-2" for="Email">
+        <div className="mb-6">
+          <label
+            className="block text-black text-lg font-bold mb-2"
+            for="Email"
+          >
             Message
           </label>
           <textarea
@@ -46,9 +58,9 @@ const Contact = () => {
             placeholder=""
           />
         </div>
-        <div class="flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:w-1/4 hover:ease-in hover:duration-300"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:ease-in hover:duration-300"
             type="button"
           >
             Send
