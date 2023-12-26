@@ -6,25 +6,20 @@ const Contact = () => {
     "bg-transparent border-none shadow-2xl appearance-none border rounded w-3/4 py-2 px-3 text-gray-700 leading-tight focus:shadow-outline drop-shadow-2xl backdrop-invert-0 bg-white/20 focus:animate-pulse focus:bg-white/80 focus:outline-none focus:scale-125 ease-in duration-300";
   return (
     <div className="contact text-center items-center justify-center flex">
-      <form className="xs:w-full md:w-1/2 lg:w-1/3 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 xl:w-2.5/6 backdrop-blur-sm">
+      <form className="xs:w-full md:w-1/2 lg:w-1/3 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 xl:w-2.5/6 bg-black/20 bg-blur-lg">
         <div className="mb-4">
           <label
             className="block text-gray-700 text-lg font-bold mb-2"
-            for="Name"
+            htmlFor="Name"
           >
             Name
           </label>
-          <input
-            className={inputStyle}
-            id="username"
-            type="text"
-            placeholder=""
-          />
+          <input className={inputStyle} id="Name" type="text" placeholder="" />
         </div>
         <div className="mb-6">
           <label
             className="block text-gray-700 text-lg font-bold mb-2"
-            for="Email"
+            htmlFor="Email"
           >
             Email
           </label>
@@ -38,7 +33,7 @@ const Contact = () => {
         <div className="mb-6">
           <label
             className="block text-black text-lg font-bold mb-2"
-            for="Email"
+            htmlFor="Email"
           >
             Phone
           </label>
@@ -47,13 +42,13 @@ const Contact = () => {
         <div className="mb-6">
           <label
             className="block text-black text-lg font-bold mb-2"
-            for="Email"
+            htmlFor="Email"
           >
             Message
           </label>
           <textarea
             className={inputStyle}
-            id="phone"
+            id="message"
             type="text"
             placeholder=""
           />
